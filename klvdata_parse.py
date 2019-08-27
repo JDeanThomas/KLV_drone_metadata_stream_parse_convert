@@ -30,9 +30,10 @@ if __name__ == '__main__':
     """
     if sys.stdin.isatty():
         filename = sys.argv[-1]
-        inf = open('./' + filename, 'rb')
+        inf = open(filename, 'rb')
         out = parse_stream(inf)
-        file_out = open("test_2.txt", "w")
+        inf.close()
+        file_out = open(filename + '_KLV.txt', 'w')
         file_out.write(str(out))
         file_out.close()
     else:
